@@ -1,6 +1,8 @@
 <template>
     <div class="search-container">
-      <input class="search-form" type="search" placeholder="Find videos to add to your playlist ...">
+      <input class='search-form' type='search' placeholder='Add videos to your playlist ...'>
+      <input type='image' src='../assets/search.png'>
+      <a href=""><img src='../assets/search.png' alt=''></a>
     </div>
 </template>
 
@@ -21,8 +23,21 @@ export default {
     input[type="search"]::-webkit-search-results-button,
     input[type="search"]::-webkit-search-results-decoration { display: none; }
 
+    /* clears the placeholder text when input is focused */
+    input:focus::-webkit-input-placeholder { color:transparent; }
+    input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+    input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+    input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
     .search-container {
-        float: left;
+        display: table-cell;
+        position: relative;
+    }
+
+    img {
+        position: absolute;
+        top: 34px;
+        left: 30px;
     }
 
     .search-form {
@@ -34,11 +49,12 @@ export default {
         color: #fff;
         border: none;
         outline: none;
-        padding-left: 10px;
+        padding-left: 30px;
         margin-left: 30px;
         float: left;
         background-color: #616573;
         font-size: 15px;
+        opacity: 0.7;
     }
 
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

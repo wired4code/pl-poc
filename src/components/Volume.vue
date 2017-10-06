@@ -13,9 +13,9 @@ export default {
 <style scoped>
 
     .volume-container {
-        float: left;
-        margin-top: 35px;
-        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .volume-control {
